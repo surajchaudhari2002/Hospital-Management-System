@@ -1,0 +1,29 @@
+<table class="table table-scrpted">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Blood</td>
+            <td>Prescription</td>
+            <td>Dose</td>
+            <td>Urgency</td>
+        
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let patient of patients" >
+
+            <td>{{patient.id}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.blood}}</td>
+            <td>{{patient.prescription}}</td>
+            <td>{{patient.dose}}</td>
+            <td>{{patient.urgency}}</td>
+            
+
+        </tr>
+    </tbody>
+</table>
