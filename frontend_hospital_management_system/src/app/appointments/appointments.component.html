@@ -10,7 +10,7 @@
         
 
         <li class="nav-item">
-            <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/appointmentlist">Appointments</a>
+            <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/admin">Back</a>
           </li>
 
         
@@ -29,42 +29,33 @@
   
   <div class="container">
   <hr>
-    <h2 style="text-align: center;margin-top: 20PX;">Admin Dashboard</h2>
+    <h2 style="text-align: center;margin-top: 20PX;">Appointment Dashboard</h2>
     <a style="color: rgb(86, 86, 86); font-size: x-large;"><marquee behavior="scroll" direction="left">
-      Welcome to Admin Dashboard. Please find the patient list below!!. Click Appointments to view and update Appointments, Click Add Appointment to add new Appointment</marquee></a>
+      Welcome to Appointment Dashboard. Please find the patient list below!!. Click Appointments to view and update Appointments, Click Add Appointment to add new Appointment</marquee></a>
   <hr>
   <!-- <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search" (input)="searchPatients()">  -->
   <br>
     <a style="color: rgb(86, 86, 86); font-size: xx-large;">Current Patient List in the Queue</a>
 <div class="tableFixHead">
   <br>
-
-<table class="table table-scrpted">
+  <table class="table table-scrpted">
     <thead>
         <tr>
             <td>Id</td>
             <td>Name</td>
             <td>Age</td>
-            <td>Blood</td>
-            <td>Prescription</td>
-            <td>Dose</td>
-            <td>Urgency</td>
-        
+            <td>Symtomps</td>
+            <td>Mob.Number</td>
         </tr>
     </thead>
     <tbody>
-
-        <tr *ngFor="let patient of patients" >
-
-            <td>{{patient.id}}</td>
-            <td>{{patient.name}}</td>
-            <td>{{patient.age}}</td>
-            <td>{{patient.blood}}</td>
-            <td>{{patient.prescription}}</td>
-            <td>{{patient.dose}}</td>
-            <td>{{patient.urgency}}</td>
+        <tr *ngFor="let appointment of appointments">
+            <td>{{appointment.id}}</td>
+            <td>{{appointment.name}}</td>
+            <td>{{appointment.age}}</td>
+            <td>{{appointment.symtomps}}</td>
+            <td>{{appointment.number}}</td>
             
-
         </tr>
     </tbody>
 </table>
