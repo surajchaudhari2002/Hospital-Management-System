@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { AdmindashComponent } from './admindash/admindash.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppointmentsComponent } from './appointments/appointments.component';
+import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdmindashComponent,
-    AppointmentsComponent
+    AppointmentsComponent,
+    CreateAppointmentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

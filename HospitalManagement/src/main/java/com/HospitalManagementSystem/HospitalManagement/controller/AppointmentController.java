@@ -15,12 +15,12 @@ public class AppointmentController {
     @Autowired
     AppointmentRepositery appointmentRepositery;
 
-    @PostMapping("/insert")
+    @PostMapping("/appointment")
     public Appointment createAppointment(@RequestBody Appointment appointment){
         return appointmentRepositery.save(appointment);
     }
 
-    @GetMapping
+    @GetMapping("/appointment")
     public List<Appointment> getAppointment(){
         return appointmentRepositery.findAll();
     }
