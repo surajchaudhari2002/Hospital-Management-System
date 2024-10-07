@@ -16,4 +16,7 @@ export class PatientService {
   getPatientList(): Observable<Patient[]> {
     return this.httpClient.get<Patient[]>(`${this.baseUrl}`);
   }
+  delete(id:number):Observable<object>{
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+  }
 }
