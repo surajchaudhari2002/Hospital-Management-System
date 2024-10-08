@@ -21,7 +21,7 @@ public class PatientController {
     @Autowired
     private PatientRepositery patientRepositery;
 
-    @PostMapping("/insert")
+    @PostMapping()
     public Patient createPatient(@RequestBody Patient patient){
         return patientRepositery.save(patient);
     }

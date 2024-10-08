@@ -10,6 +10,8 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { DocdashComponent } from './docdash/docdash.component';
+import { CreatePatientComponent } from './create-patient/create-patient.component';
+import { MedicineComponent } from './medicine/medicine.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DocdashComponent } from './docdash/docdash.component';
     AppointmentsComponent,
     CreateAppointmentComponent,
     HomeComponent,
-    DocdashComponent
+    DocdashComponent,
+    CreatePatientComponent,
+    MedicineComponent
   ],
   imports: [
     BrowserModule,
