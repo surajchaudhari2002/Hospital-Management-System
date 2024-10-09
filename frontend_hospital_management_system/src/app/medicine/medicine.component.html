@@ -11,7 +11,11 @@
         
   
         <li class="nav-item">
-            <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/">Add Medicine</a>
+            <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/create-medicine">Add Medicine</a>
+          </li>
+
+          <li class="nav-item">
+            <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/docdash">Back</a>
           </li>
   
         
@@ -53,7 +57,7 @@
         <tbody>
           <tr *ngFor="let medicine of medicines">
             <td>{{medicine.id}}</td>
-            <td>{{medicine.drug}}</td>
+            <td>{{medicine.drugName}}</td>
             <td>{{medicine.stock}}</td>
             <td>
             <button class="btn btn-danger">Delete</button>

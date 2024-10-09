@@ -14,7 +14,7 @@ public class MedicineController {
     @Autowired
     MedicineRepositery medicineRepositery;
 
-    @PostMapping("/insert")
+    @PostMapping()
     public Medicine createMedicine(@RequestBody Medicine medicine){
         return medicineRepositery.save(medicine);
     }

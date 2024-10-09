@@ -14,4 +14,8 @@ export class MedicineService {
   getMedicines():Observable<Medicine[]> {
     return this.httpClient.get<Medicine[]>(`${this.baseUrl}`);
   }
+
+  createMedicine(medicine:Medicine):Observable<Medicine>{
+    return this.httpClient.post<Medicine>(`${this.baseUrl}`,medicine);
+  }
 }
