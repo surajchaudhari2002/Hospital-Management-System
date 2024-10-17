@@ -52,8 +52,8 @@ public class PatientController {
         patient1.setUrgency(patient.getUrgency());
         patient1.setBlood(patient.getBlood());
 
-        patientRepositery.save(patient1);
-        return ResponseEntity.ok(patient1);
+        Patient savedPatient=patientRepositery.save(patient1);
+        return ResponseEntity.ok(savedPatient);
     }
 
 }
