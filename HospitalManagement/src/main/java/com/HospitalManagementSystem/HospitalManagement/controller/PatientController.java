@@ -40,4 +40,20 @@ public class PatientController {
         return ResponseEntity.ok(response);
 
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Patient> updatePatient(@PathVariable long id, @RequestBody Patient patient) throws AttributeNotFoundException {
+        Patient patient1=patientRepositery.findById(id).orElseThrow(()->new AttributeNotFoundException("Patient not found with id "+id));
+        patient1.setAge(patient.getAge());
+        patient1.setName(patient.getName());
+        patient1.setFees(patient.getFees());
+        patient1.setDose(patient.getDose());
+        patient1.setPrescription(patient.getPrescription());
+        patient1.setUrgency(patient.getUrgency());
+        patient1.setBlood(patient.getBlood());
+
+        patientRepositery.save(patient1);
+        return ResponseEntity.ok(patient1);
+    }
+
 }
