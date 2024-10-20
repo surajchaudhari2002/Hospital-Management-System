@@ -26,4 +26,5 @@ onSubmit(){
 gotoPatientlist(){
 this.router.navigate(['/docdash'])
 }
+
 }
