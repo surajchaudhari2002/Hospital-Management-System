@@ -31,6 +31,13 @@ public class PatientController {
         return patientRepositery.findAll();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Patient> updatePatient(@PathVariable long id) throws AttributeNotFoundException {
+        Patient patient=patientRepositery.findById(id).orElseThrow(()->new AttributeNotFoundException("Patient not found with id "+id));
+        return ResponseEntity.ok(patient);
+    }
+
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String,Boolean>> deletePatient(@PathVariable long id) throws AttributeNotFoundException {
         Patient patient=patientRepositery.findById(id).orElseThrow(()->new AttributeNotFoundException("Patient not found with id "+id));
