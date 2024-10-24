@@ -52,6 +52,7 @@
             <th scope="col">ID</th>
             <th scope="col">Drugs</th>
             <th scope="col">Stock</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -60,7 +61,7 @@
             <td>{{medicine.drugName}}</td>
             <td>{{medicine.stock}}</td>
             <td>
-            <button class="btn btn-danger">Delete</button>
+            <button type="submit" (click)="update(medicine.id)" class="btn btn-info">Update</button>
           </td>
           </tr>
         </tbody>
