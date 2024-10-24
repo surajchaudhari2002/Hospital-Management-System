@@ -26,4 +26,11 @@ export class DocdashComponent {
   update(id:number){
     this.router.navigate(['update-patient',id])
   }
+
+  delete(id:number){
+    this.patientService.delete(id).subscribe(data=>{
+      console.log(data);
+      this.getPatients();
+    })
+  }
 }
