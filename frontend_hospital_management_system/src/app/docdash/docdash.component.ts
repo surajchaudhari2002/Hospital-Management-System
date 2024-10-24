@@ -33,4 +33,8 @@ export class DocdashComponent {
       this.getPatients();
     })
   }
+
+  view(id:number){
+    this.router.navigate(['/view-patient',id]);
+  }
 }

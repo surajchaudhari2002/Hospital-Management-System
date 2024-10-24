@@ -1,0 +1,40 @@
+
+        .container {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .container label {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .container b {
+            font-weight: normal;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .container label, .container b {
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .container br {
+            margin-bottom: 8px;
+        }
+
+        /* Optional styling for mobile responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+        }
