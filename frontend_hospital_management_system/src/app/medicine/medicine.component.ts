@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MedicineService } from '../medicine.service';
 import { Medicine } from '../medicine';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-medicine',
@@ -24,5 +25,12 @@ getMedicineList(){
 
 update(id:number){
 this.router.navigate(['update-medicine',id]);
+}
+
+delete(id:number){
+  this.medicineService.deleteMedicine(id).subscribe(data=>{
+    console.log(data);
+    this.getMedicineList();
+  })
 }
 }

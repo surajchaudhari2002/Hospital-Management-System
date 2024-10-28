@@ -8,7 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.management.AttributeNotFoundException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v3")
@@ -37,8 +40,18 @@ public class MedicineController {
     public ResponseEntity<Medicine> updateMedicine(@PathVariable long id, @RequestBody Medicine medicine) throws AttributeNotFoundException {
         Medicine medicine1=medicineRepositery.findById(id).orElseThrow(()->new AttributeNotFoundException("Medicine not found with id "+id));
         medicine1.setDrugName(medicine.getDrugName());
-        medicine1.setStock(medicine1.getStock());
+        medicine1.setStock(medicine.getStock());
         Medicine sevedMedicine =medicineRepositery.save(medicine1);
         return ResponseEntity.ok(sevedMedicine);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String,Boolean>> deleteMedicine(@PathVariable long id) throws AttributeNotFoundException {
+        Medicine medicine1=medicineRepositery.findById(id).orElseThrow(()->new AttributeNotFoundException("Medicine not found with id "+id));
+        medicineRepositery.delete(medicine1);
+        Map<String,Boolean> response=new HashMap<>();
+        response.put("Delete",Boolean.TRUE);
+
+        return ResponseEntity.ok(response);
     }
 }

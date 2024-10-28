@@ -35,12 +35,12 @@
             <form (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="drug" class="font-weight-bold text-secondary">Drug Name</label>
-                    <input type="text" id="drug" class="form-control" placeholder="Enter drug"  name="drugName">
+                    <input type="text" id="drug" class="form-control" placeholder="Enter drug"  [(ngModel)]="medicine.drugName" name="drugName">
                 </div>
     
                 <div class="form-group">
                     <label for="stock" class="font-weight-bold text-secondary">Stock</label>
-                    <input type="text" id="stock" class="form-control" placeholder="Enter stock"  name="stock">
+                    <input type="text" id="stock" class="form-control" placeholder="Enter stock" [(ngModel)]="medicine.stock" name="stock">
                 </div>
     
                   <br>
