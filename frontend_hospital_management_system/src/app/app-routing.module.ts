@@ -12,6 +12,7 @@ import { UpdatePatientComponent } from './update-patient/update-patient.componen
 import { ViewPatientComponent } from './view-patient/view-patient.component';
 import { UpdateMedicineComponent } from './update-medicine/update-medicine.component';
 import { DocloginComponent } from './doclogin/doclogin.component';
+import { AdloginComponent } from './adlogin/adlogin.component';
 
 const routes: Routes = [
  { path:'admin',component:AdmindashComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
  {path:'update-patient/:id',component:UpdatePatientComponent},
  {path:'view-patient/:id',component:ViewPatientComponent},
  {path:'update-medicine/:id',component:UpdateMedicineComponent},
- {path:'doclogin',component:DocloginComponent}
+ {path:'doclogin',component:DocloginComponent},
+ {path:'adlogin',component:AdloginComponent}
 ];
 
 @NgModule({
