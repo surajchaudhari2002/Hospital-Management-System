@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { PatientService } from '../PatientService';
 import { Patient } from '../patient';
+import { AdauthService } from '../adauth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admindash',
@@ -10,7 +12,7 @@ import { Patient } from '../patient';
 export class AdmindashComponent {
 
   patients:Patient[]=[];
-constructor(private patientService:PatientService){}
+constructor(private patientService:PatientService,private adauthService:AdauthService,private router:Router){}
 
 ngOnInit():void{
   this.getPatients();
@@ -27,6 +29,11 @@ delete(id:number){
     console.log(data);
     this.getPatients();
   })
+}
+
+logout(){
+  this.adauthService.logOut();
+  this.router.navigate(['home']);
 }
 
 

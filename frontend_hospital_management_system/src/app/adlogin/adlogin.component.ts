@@ -8,13 +8,13 @@ import { AdauthService } from '../adauth.service';
   styleUrl: './adlogin.component.css'
 })
 export class AdloginComponent {
-  username:string="";
-  password:string="";
+  username2:string="";
+  password2:string="";
   inValidLogin=false;
 
   constructor(private router:Router, private adauthService:AdauthService){}
 checkLogin(){
-     if(this.adauthService.authenticate(this.username,this.password)){
+     if(this.adauthService.authenticate(this.username2,this.password2)){
       this.router.navigate(['admin']);
       this.inValidLogin=false;
      }

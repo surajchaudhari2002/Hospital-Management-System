@@ -4,9 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AdauthService {
-  authenticate(username: string, password: string) {
-    if(username=="suraj" && password=="Suraj123"){
-      sessionStorage.setItem('username',username)
+
+  constructor() { }
+  authenticate(username2: string, password2: string) {
+    if(username2=="suraj" && password2=="Suraj123"){
+      sessionStorage.setItem('username2',username2)
       return true;
 
     }
@@ -15,5 +17,14 @@ export class AdauthService {
     }
   }
 
-  constructor() { }
+  isUserLoggedIn(){
+    console.log("user is logged in !");
+    let user=sessionStorage.getItem('username2');
+    return !(user==null)
+  }
+
+  logOut(){
+    console.log("user is logged out !")
+     sessionStorage.removeItem('username2')
+  }
 }
