@@ -7,7 +7,7 @@ export class AdauthService {
 
   constructor() { }
   authenticate(username2: string, password2: string) {
-    if(username2=="suraj" && password2=="Suraj123"){
+    if(username2=="suraj" && password2=="suraj123"){
       sessionStorage.setItem('username2',username2)
       return true;
 

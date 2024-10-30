@@ -14,6 +14,7 @@ import { UpdateMedicineComponent } from './update-medicine/update-medicine.compo
 import { DocloginComponent } from './doclogin/doclogin.component';
 import { AdloginComponent } from './adlogin/adlogin.component';
 import { AdminauthgauardService } from './adminauthgauard.service';
+import { DocauthgauardService } from './docauthgauard.service';
 
 const routes: Routes = [
  { path:'admin',component:AdmindashComponent,canActivate:[AdminauthgauardService]},
@@ -21,13 +22,13 @@ const routes: Routes = [
  {path:'create-appointment',component:CreateAppointmentComponent,canActivate:[AdminauthgauardService]},
  {path:'home',component:HomeComponent},
  {path:'',redirectTo:'home',pathMatch:'full'},
- {path:'docdash',component:DocdashComponent},
- {path:'create-patient',component:CreatePatientComponent},
- {path:'view-medicine',component:MedicineComponent},
- {path:'create-medicine',component:CreateMedicineComponent},
- {path:'update-patient/:id',component:UpdatePatientComponent},
- {path:'view-patient/:id',component:ViewPatientComponent},
- {path:'update-medicine/:id',component:UpdateMedicineComponent},
+ {path:'docdash',component:DocdashComponent,canActivate:[DocauthgauardService]},
+ {path:'create-patient',component:CreatePatientComponent,canActivate:[DocauthgauardService]},
+ {path:'view-medicine',component:MedicineComponent,canActivate:[DocauthgauardService]},
+ {path:'create-medicine',component:CreateMedicineComponent,canActivate:[DocauthgauardService]},
+ {path:'update-patient/:id',component:UpdatePatientComponent,canActivate:[DocauthgauardService]},
+ {path:'view-patient/:id',component:ViewPatientComponent,canActivate:[DocauthgauardService]},
+ {path:'update-medicine/:id',component:UpdateMedicineComponent,canActivate:[DocauthgauardService]},
  {path:'doclogin',component:DocloginComponent},
  {path:'adlogin',component:AdloginComponent}
 ];

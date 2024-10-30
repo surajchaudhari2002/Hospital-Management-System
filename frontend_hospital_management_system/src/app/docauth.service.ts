@@ -15,4 +15,14 @@ export class DocauthService {
     return false;
   }
 }
+isUserloggedIn(){
+  console.log("User is logged in !");
+  let user =sessionStorage.getItem('username');
+  return !(user==null);
+ }
+
+ loggedOut(){
+  console.log("User is logged Out !");
+  sessionStorage.removeItem('username');
+ }
 }
